@@ -1,0 +1,28 @@
+{
+  "eventId": "0000",
+  "year": 2024,
+  "eventYearId": "0000-2024",
+  "displayTitle": "Event 0000 / 2024",
+  "date": "2024-09-15",
+  "location": "Berlin",
+  "sport": "Running",
+  "status": "active",
+  "listed": true,
+  "embedAllowed": true,
+  "description": "Beispielhafte Eventseite für die Ausgabe 2024. Diese Seite ist direkt aufrufbar und per iframe einbindbar.",
+  "metrics": {
+    "participants": 1240,
+    "finishers": 1178,
+    "distances": 3,
+    "bestTime": "00:31:44"
+  },
+  "show": {
+    "showDescription": true,
+    "showMetrics": true,
+    "showLinks": true,
+    "showEmbedInfo": true
+  },
+  "links": {
+    "website": "https://example.com/event-0000-2024"
+  }
+}
