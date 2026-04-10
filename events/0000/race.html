@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Race</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 2rem;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .nav {
+      margin-bottom: 1rem;
+    }
+    .nav a {
+      color: #005bbb;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .meta {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .meta-row {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .error {
+      background: #ffeaea;
+      color: #8a0000;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Lade Race...</h1>
+    <p id="subtitle"></p>
+  </header>
+
+  <main>
+    <div class="nav">
+      <a id="back-to-event" href="../">← Event</a>
+      <a id="back-to-year" href="./">← Jahr</a>
+    </div>
+
+    <div id="content" class="card">
+      <p>Lade Daten...</p>
+    </div>
+
+    <div id="error"></div>
+  </main>
+
+  <script>
+    function getParams() {
+      const url = new URL(window.location.href);
+      return {
+        year: url.searchParams.get("year"),
+        race: url.searchParams.get("race")
+      };
+    }
+
+    async function init() {
+      const titleEl = document.getElementById("title");
+      const subtitleEl = document.getElementById("subtitle");
+      const contentEl = document.getElementById("content");
+      const errorEl = document.getElementById("error");
+      const backToYearEl = document.getElementById("back-to-year");
+
+      try {
+        const { year, race } = getParams();
+
+        if (!year || !race) {
+          throw new Error("URL-Parameter year und race werden benötigt.");
+        }
+
+        backToYearEl.href = `./${year}/`;
+
+        const res = await fetch(`./${year}/${race}/race.json`);
+        if (!res.ok) {
+          throw new Error(`race.json für ${year}/${race} konnte nicht geladen werden.`);
+        }
+
+        const data = await res.json();
+
+        titleEl.textContent = data.name || `Race ${data.raceId}`;
+        subtitleEl.textContent = `Event ${data.eventId} · Jahr ${data.year} · Race ID ${data.raceId}`;
+
+        contentEl.innerHTML = `
+          <div class="meta">
+            <div class="meta-row">
+              <span class="label">Name</span>
+              <span>${data.name || "-"}</span>
+            </div>
+            <div class="meta-row">
+              <span class="label">Event ID</span>
+              <span>${data.eventId || "-"}</span>
+            </div>
+            <div class="meta-row">
+              <span class="label">Jahr</span>
+              <span>${data.year || "-"}</span>
+            </div>
+            <div class="meta-row">
+              <span class="label">Race ID</span>
+              <span>${data.raceId || "-"}</span>
+            </div>
+            <div class="meta-row">
+              <span class="label">Distanz</span>
+              <span>${data.distance || "-"} ${data.unit || ""}</span>
+            </div>
+            <div class="meta-row">
+              <span class="label">Beschreibung</span>
+              <span>${data.description || "-"}</span>
+            </div>
+          </div>
+        `;
+      } catch (err) {
+        contentEl.innerHTML = "";
+        errorEl.innerHTML = `<div class="error">${err.message}</div>`;
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
