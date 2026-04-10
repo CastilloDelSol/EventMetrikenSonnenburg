@@ -1,0 +1,11 @@
+{
+  "eventId": "0000",
+  "year": "2025",
+  "title": "Event 0000 - 2025",
+  "description": "Rennen und Auswertungen für 2025.",
+  "races": [
+    { "raceId": "00", "name": "5K" },
+    { "raceId": "01", "name": "10K" },
+    { "raceId": "02", "name": "Halbmarathon" }
+  ]
+}
