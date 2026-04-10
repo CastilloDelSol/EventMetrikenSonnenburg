@@ -1,0 +1,28 @@
+{
+  "eventId": "9999",
+  "year": 2026,
+  "eventYearId": "9999-2026",
+  "displayTitle": "Event 9999 / 2026",
+  "date": "2026-06-20",
+  "location": "Sonnenburg",
+  "sport": "Triathlon",
+  "status": "planned",
+  "listed": true,
+  "embedAllowed": true,
+  "description": "Neue Event-Basis-ID mit eigener Ausgabe für 2026.",
+  "metrics": {
+    "participants": 0,
+    "finishers": 0,
+    "distances": 3,
+    "bestTime": "-"
+  },
+  "show": {
+    "showDescription": true,
+    "showMetrics": true,
+    "showLinks": false,
+    "showEmbedInfo": true
+  },
+  "links": {
+    "website": "https://example.com/event-9999-2026"
+  }
+}
