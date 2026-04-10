@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sport Event Metriken</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+  <header id="hero" class="hero" hidden>
+    <div class="container">
+      <p class="eyebrow">Sport Event Metriken</p>
+      <h1>Eventdaten, Sichtbarkeit und Metriken für Sportveranstaltungen</h1>
+      <p class="lead">
+        Zentrale Landing Page für betreute Events, Eventprofile, Suchfunktionen
+        und einbettbare Eventseiten.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="./events.html">Events durchsuchen</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" hidden>
+      <div class="container section">
+        <h2>Was ich mache</h2>
+        <p>
+          Ich unterstütze Sportveranstaltungen mit Eventprofilen, strukturierten Daten,
+          Kennzahlen, Darstellung von Metriken und einer zentralen, durchsuchbaren Übersicht.
+        </p>
+      </div>
+    </section>
+
+    <section id="services" hidden>
+      <div class="container section">
+        <h2>Leistungen</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Eventprofile</h3>
+            <p>Einheitliche Eventseiten mit individueller Beschreibung und Datenstruktur.</p>
+          </article>
+          <article class="card">
+            <h3>Metriken</h3>
+            <p>Teilnehmerzahlen, Finisher, Distanzen, Leistungskennzahlen und weitere KPIs.</p>
+          </article>
+          <article class="card">
+            <h3>Einbettung</h3>
+            <p>Direkt aufrufbar oder als iframe-Modul in eine Event-Website integrierbar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="event-preview" hidden>
+      <div class="container section">
+        <div class="section-head">
+          <div>
+            <h2>Betreute Events</h2>
+            <p>Auszug aus dem Eventindex</p>
+          </div>
+          <a href="./events.html">Alle anzeigen</a>
+        </div>
+
+        <input
+          id="landing-search"
+          class="input"
+          type="search"
+          placeholder="Suche nach Titel, Ort, Sport, Jahr oder Event-ID"
+        />
+
+        <div id="landing-event-results" class="cards"></div>
+      </div>
+    </section>
+
+    <section id="contact" hidden>
+      <div class="container section">
+        <h2>Kontakt</h2>
+        <p>
+          Für Kooperationen, Eventbetreuung oder die Einbindung einer eigenen Eventseite.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
