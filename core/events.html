@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events | Sport Event Metriken</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+  <main class="container section">
+    <div class="page-head">
+      <div>
+        <p class="eyebrow">Eventindex</p>
+        <h1>Betreute Events</h1>
+        <p>Suche und Filter über alle gelisteten Event-Jahre.</p>
+      </div>
+      <a class="button secondary" href="./index.html">Zur Startseite</a>
+    </div>
+
+    <div class="filters">
+      <input
+        id="search"
+        class="input"
+        type="search"
+        placeholder="Suche nach Event-ID, Titel, Ort, Sport oder Jahr"
+      />
+
+      <select id="yearFilter" class="input">
+        <option value="">Alle Jahre</option>
+      </select>
+
+      <select id="sportFilter" class="input">
+        <option value="">Alle Sportarten</option>
+      </select>
+    </div>
+
+    <div id="results" class="cards"></div>
+  </main>
+
+  <script src="./assets/js/events.js"></script>
+</body>
+</html>
