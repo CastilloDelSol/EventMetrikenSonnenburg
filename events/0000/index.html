@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event 0000</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 2rem;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .card a {
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .muted {
+      color: #666;
+      margin-top: 0.5rem;
+    }
+    .error {
+      background: #ffeaea;
+      color: #8a0000;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Lade Event...</h1>
+    <p id="description"></p>
+  </header>
+
+  <main>
+    <h2>Jahre</h2>
+    <div id="years" class="grid"></div>
+    <div id="error"></div>
+  </main>
+
+  <script>
+    async function init() {
+      const titleEl = document.getElementById("title");
+      const descEl = document.getElementById("description");
+      const yearsEl = document.getElementById("years");
+      const errorEl = document.getElementById("error");
+
+      try {
+        const res = await fetch("./event.json");
+        if (!res.ok) throw new Error("event.json konnte nicht geladen werden.");
+
+        const data = await res.json();
+
+        titleEl.textContent = data.title || `Event ${data.eventId}`;
+        descEl.textContent = data.description || "";
+
+        yearsEl.innerHTML = "";
+
+        (data.years || []).forEach((item) => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = `
+            <a href="./${item.year}/">${item.label || item.year}</a>
+            <div class="muted">Jahresübersicht öffnen</div>
+          `;
+          yearsEl.appendChild(card);
+        });
+      } catch (err) {
+        errorEl.innerHTML = `<div class="error">${err.message}</div>`;
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
