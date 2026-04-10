@@ -1,0 +1,28 @@
+{
+  "eventId": "0000",
+  "year": 2025,
+  "eventYearId": "0000-2025",
+  "displayTitle": "Event 0000 / 2025",
+  "date": "2025-09-14",
+  "location": "Berlin",
+  "sport": "Running",
+  "status": "active",
+  "listed": true,
+  "embedAllowed": true,
+  "description": "Folgejahr derselben Event-Basis-ID mit eigener Jahresseite und eigenen Metriken.",
+  "metrics": {
+    "participants": 1385,
+    "finishers": 1314,
+    "distances": 4,
+    "bestTime": "00:30:58"
+  },
+  "show": {
+    "showDescription": true,
+    "showMetrics": true,
+    "showLinks": false,
+    "showEmbedInfo": true
+  },
+  "links": {
+    "website": "https://example.com/event-0000-2025"
+  }
+}
