@@ -1,0 +1,43 @@
+{
+  "events": [
+    {
+      "eventId": "0000",
+      "year": 2024,
+      "eventYearId": "0000-2024",
+      "displayTitle": "Event 0000 / 2024",
+      "location": "Berlin",
+      "sport": "Running",
+      "status": "active",
+      "listed": true,
+      "embedAllowed": true,
+      "shortDescription": "Beispiel-Eventprofil für das Jahr 2024.",
+      "url": "./events/0000/2024/"
+    },
+    {
+      "eventId": "0000",
+      "year": 2025,
+      "eventYearId": "0000-2025",
+      "displayTitle": "Event 0000 / 2025",
+      "location": "Berlin",
+      "sport": "Running",
+      "status": "active",
+      "listed": true,
+      "embedAllowed": true,
+      "shortDescription": "Folgejahr derselben Event-Basis-ID.",
+      "url": "./events/0000/2025/"
+    },
+    {
+      "eventId": "0001",
+      "year": 2026,
+      "eventYearId": "0001-2026",
+      "displayTitle": "Event 0001 / 2026",
+      "location": "Sonnenburg",
+      "sport": "Triathlon",
+      "status": "planned",
+      "listed": true,
+      "embedAllowed": true,
+      "shortDescription": "Neues Event unter einer neuen Basis-ID.",
+      "url": "./events/0001/2026/"
+    }
+  ]
+}
