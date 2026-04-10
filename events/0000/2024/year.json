@@ -1,0 +1,11 @@
+{
+  "eventId": "0000",
+  "year": "2024",
+  "title": "Event 0000 - 2024",
+  "description": "Rennen und Auswertungen für 2024.",
+  "races": [
+    { "raceId": "00", "name": "5K" },
+    { "raceId": "01", "name": "10K" },
+    { "raceId": "02", "name": "Halbmarathon" }
+  ]
+}
